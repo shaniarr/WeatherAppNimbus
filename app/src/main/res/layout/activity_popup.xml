@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="350dp"
+    android:layout_gravity="center"
+    android:backgroundTint="@color/transparent">
+
+    <LinearLayout
+        android:id="@+id/popup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/shania"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:src="@drawable/shania">
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/thalia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
+            android:src="@drawable/thalia">
+        </ImageView>
+
+        <Button
+            android:id="@+id/close_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/retro_gaming"
+            android:text="Tutup"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/transparent"
+            android:layout_gravity="center"
+            />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

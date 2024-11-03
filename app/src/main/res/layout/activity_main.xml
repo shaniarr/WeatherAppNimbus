@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/sunny"
+        tools:context=".Activities.MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/app_bar_layout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+
+            <EditText
+                android:id="@+id/city_search"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:hint="Search here..."
+                android:drawableStart="@drawable/search_icn"
+                android:drawablePadding="10dp"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:background="@drawable/search"
+                android:fontFamily="@font/retro_gaming"
+                android:layout_margin="10dp">
+
+            </EditText>
+
+
+            <ImageView
+                android:id="@+id/current_location"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="10dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/loc"
+                tools:ignore="SpeakableTextPresentCheck">
+            </ImageView>
+        </LinearLayout>
+        <FrameLayout
+            android:id="@+id/root_layout"
+            android:layout_width="427dp"
+            android:layout_height="692dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.333"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/app_bar_layout"
+            app:layout_constraintVertical_bias="0.0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/date_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:text="Time"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/retro_gaming"
+                    android:textSize="15sp">
+
+                </TextView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/min_temp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="25dp"
+                        android:text="Min Temp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/retro_gaming">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/max_temp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:text="Max Temp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/retro_gaming">
+
+                    </TextView>
+
+
+                </LinearLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="96dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0">
+
+                        <TextView
+                            android:id="@+id/temp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/retro_gaming"
+                            android:text="12"
+                            android:textColor="@color/white"
+                            android:textSize="85sp">
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/feels_like"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/retro_gaming"
+                            android:text="Feels Like"
+                            android:textColor="@color/white">
+                        </TextView>
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="25dp"
+                app:cardCornerRadius="25dp">
+
+                <LinearLayout
+                    android:id="@+id/options_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="283dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/widget"
+                        android:weightSum="3">
+
+
+                        <LinearLayout
+                            android:id="@+id/pressure_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="12dp"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+                            <ImageView
+                                android:id="@+id/pressure_img"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:paddingTop="10dp"
+                                android:src="@drawable/pressure">
+
+                            </ImageView>
+
+                            <TextView
+                                android:id="@+id/pressure_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="-"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/retro_gaming"
+                                android:textSize="20sp"
+                                android:textStyle="bold">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Pressure"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/retro_gaming"
+                                android:textSize="15sp">
+                            </TextView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/temp_f_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            tools:ignore="DuplicateIds">
+
+
+                            <ImageView
+                                android:id="@+id/temp_f"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:paddingTop="10dp"
+                                android:src="@drawable/temp">
+
+                            </ImageView>
+
+                            <TextView
+                                android:id="@+id/temp_f_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="1dp"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/retro_gaming"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:text="-">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="1dp"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/retro_gaming"
+                                android:text="°F">
+                            </TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/humidity_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="10dp"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+                            <ImageView
+                                android:id="@+id/humidity_img"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:paddingTop="10dp"
+                                android:src="@drawable/humidity">
+
+                            </ImageView>
+
+                            <TextView
+                                android:id="@+id/humidity_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="-"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/retro_gaming"
+                                android:textSize="20sp"
+                                android:textStyle="bold">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="1dp"
+                                android:textSize="15sp"
+                                android:text="Humidity"
+                                android:fontFamily="@font/retro_gaming"
+                                android:textColor="@color/black">
+                            </TextView>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:id="@+id/country_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:background="@drawable/rec_bg"
+                            android:layout_marginEnd="10dp"
+                            android:gravity="center">
+
+
+                            <ImageView
+                                android:id="@+id/country"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:paddingTop="5dp"
+                                android:src="@drawable/loc_icn">
+
+                            </ImageView>
+
+                            <TextView
+                                android:id="@+id/country_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:fontFamily="@font/retro_gaming"
+                                android:text="-">
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/retro_gaming"
+                                android:text="Country">
+                            </TextView>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/recomendation"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/rec_bg"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/recomend"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:paddingTop="5dp">
+                            </ImageView>
+
+                            <TextView
+                                android:id="@+id/baju_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:fontFamily="@font/retro_gaming"
+                                android:text="-">
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rec"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/retro_gaming"
+                                android:textColor="@color/black">
+                            </TextView>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </FrameLayout>
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+        </ProgressBar>
+
+        <ImageButton
+            android:id="@+id/btn_info"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="60dp"
+            android:onClick="openlayout"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/btn_info"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+        </ImageButton>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
